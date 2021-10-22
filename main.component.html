@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Home</title>
+</head>
+<body>
+    <div class="library-content">
+        <label>Name:</label> 
+        <input type="text" [(ngModel)]='studentname'><br><br>
+        <label>USN:</label> 
+        <input type="text" [(ngModel)]='usn'><br><br>
+        <label>Semester:</label> 
+        <input type="text" [(ngModel)]='semester'><br><br>
+
+        <table class="my-table" border="5px solid black;">
+            <tr>
+                <th>Book Name</th>
+                <th>Author</th>
+                <th>Publish Year</th>
+                <th>Select</th>
+            </tr>
+            <tr *ngFor="let book of bookList">
+                <td>{{book.name}}</td>
+                <td>{{book.author}}</td>
+                <td>{{book.published}}</td>
+                <td><input type="checkbox" (change)="onChange(book.name, $event.target.checked)" id={{book.name}} name={{book.name}} ></td>
+            </tr>
+        </table>
+
+        <button (click)="directToDisplay()">Submit</button>
+    </div>
+</body>
+</html>

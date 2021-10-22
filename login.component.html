@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login</title>
+    </head>
+    <body>
+        <div class="login-content">
+            <h1>Login Here</h1>
+            <label for="username">Username: </label><input type="text" [(ngModel)]='username'><br><br>
+            <label for="password">Password: </label><input type="password" [(ngModel)]='password'><br><br>
+            <button id="loginButton" (click)="directToMain()">Login</button>
+        </div>
+    </body>
+</html>
